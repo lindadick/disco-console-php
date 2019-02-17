@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 define("DISCO_DIR", "/home/pi/disco");
 chdir(DISCO_DIR);
 
