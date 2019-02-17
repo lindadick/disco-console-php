@@ -9,8 +9,13 @@ function _sanitize($string) {
 }
 
 function get_playlists() {
-	exec(DISCO_DIR . "/disco --playlist-search", $output, $return_var);
-	return json_encode($output);
+    exec(DISCO_DIR . "/disco --playlist-search", $output, $return_var);
+    $playlists = [];
+    $index = 0;
+    foreach($output as $playlist_name) {
+       array_push($playlists, array("id" => $index++, "name" => $playlist_name));
+    }
+	return json_encode($playlists);
 }
 
 function add_playlist($name) {
