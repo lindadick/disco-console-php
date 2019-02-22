@@ -34,7 +34,6 @@ function set_mode($mode, $playlist=null) {
             return $return_var != 255;
         case "Play-Mixed":
         case "Playlist":
-            //TODO this isn't working yet - need to wait for Dad's help.
             if ($playlist != null) {
                 exec(DISCO_DIR . "/disco --mode " . $mode . " --playlist \"" . $playlist . "\"", $output, $return_var);
                 return $return_var != 255;
