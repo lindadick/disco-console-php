@@ -2,6 +2,10 @@
 include("common.php");
 
 $mode = $_GET['mode'];
-$playlist = $_GET['playlist'] || null;
+if (isset($_GET['playlist'])) {
+    $playlist = $_GET['playlist'];
+} else {
+    $playlist = null;
+}
 
 print set_mode($mode, $playlist);
